@@ -1,0 +1,122 @@
+:root {
+    --color-bg-primary: #2F2F2F;
+    --color-bg-secondary: #3A3A3A;
+    --color-text: #EAEAEA;
+    --color-switcher-on: #2A9F41;
+    --color-switcher-off: #BE3A1B;
+    --color-slider: #EEEEEE;
+    --color-slider-shadow: rgba(0, 0, 0, 0.24);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 5%;
+    min-width: 250px;
+    font-size: 1rem;
+    font-family: "Verdana", sans-serif;
+    background-color: var(--color-bg-primary);
+}
+
+#content-wrapper {
+    width: 100%;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text);
+}
+
+header {
+    padding: 5% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+header img {
+    width: 20%;
+}
+
+header h4 {
+    text-transform: uppercase;
+    font-size: x-large;
+}
+
+#options {
+    padding: 7% 10% 10%;
+    margin: 0 auto;
+    background-color: var(--color-bg-secondary);
+}
+
+#options>.switch+.switch {
+    margin-top: 5%;
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch input:checked+.slider {
+    background-color: var(--color-switcher-on);
+}
+
+.switch input:checked+.slider:before {
+    transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);
+}
+
+.switch input:checked+.slider:after {
+    transform: translate3d(20px, 2px, 0);
+}
+
+.slider {
+    position: relative;
+    display: inline-block;
+    max-width: 42px;
+    min-width: 42px;
+    min-height: 24px;
+    max-height: 24px;
+    background-color: var(--color-switcher-off);
+    border-radius: 22px;
+    vertical-align: text-bottom;
+    transition: all 0.1s linear;
+}
+
+.slider:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 38px;
+    height: 20px;
+    background-color: var(--color-switcher-off);
+    border-radius: 11px;
+    transform: translate3d(2px, 2px, 0) scaleX(1);
+    transition: all 0.1s linear;
+}
+
+.slider:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-slider);
+    border-radius: 11px;
+    box-shadow: 0 2px 2px var(--color-slider-shadow);
+    transform: translate3d(2px, 2px, 0);
+    transition: all 0.1s ease-in-out;
+}
+
+.switch .label {
+    padding-left: 7%;
+}

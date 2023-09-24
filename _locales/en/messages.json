@@ -1,0 +1,10 @@
+{
+    "extName": {
+        "message": "Image Blurrer",
+        "description": "Extension name."
+    },
+    "extDesc": {
+        "message": "Blur all the images!",
+        "description": "Extension description."
+    }
+}
